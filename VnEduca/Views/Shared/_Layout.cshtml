@@ -60,18 +60,18 @@
                     <div class="row">
                         <div class="col-9 col-lg-3">
                             <div class="site-branding">
-                                <h1 class="site-title"><a href="index.html" rel="home">Ezu<span>ca</span></a></h1>
+                                <h1 class="site-title"><a asp-controller="Home" asp-action="Index">Ezu<span>ca</span></a></h1>
                             </div><!-- .site-branding -->
                         </div><!-- .col -->
 
                         <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                    <li class="current-menu-item"><a href="index.html">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Courses</a></li>
-                                    <li><a href="#">blog</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li class="@((string)ViewData["CurrentPage"] == "home" ? "current-menu-item" : "")"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                    <li class="@((string)ViewData["CurrentPage"] == "about" ? "current-menu-item" : "")"><a asp-controller="About" asp-action="Index">About</a></li>
+                                    <li class="@((string)ViewData["CurrentPage"] == "courses" ? "current-menu-item" : "")"><a asp-controller="Courses" asp-action="Index">Courses</a></li>
+                                    <li class="@((string)ViewData["CurrentPage"] == "blog" ? "current-menu-item" : "")"><a asp-controller="Blog" asp-action="Index">blog</a></li>
+                                    <li class="@((string)ViewData["CurrentPage"] == "contact" ? "current-menu-item" : "")"><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                                 </ul>
 
                                 <div class="hamburger-menu d-lg-none">
@@ -115,6 +115,34 @@
     </div><!-- .hero-content -->
 
     @RenderBody()
+
+    <div class="clients-logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
+                    <div class="logo-wrap">
+                        <img src="images/logo-1.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-2.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-3.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-4.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-5.png" alt="">
+                    </div><!-- .logo-wrap -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .clients-logo -->
 
     <footer class="site-footer">
         <div class="footer-widgets">
