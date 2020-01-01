@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace VnEduca.Models
 {
-    public class VideoLesstion
+    public class Tag
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Url { get; set; }
+        public string Name { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public int CreatedBy { get; set; }
     }
 }
